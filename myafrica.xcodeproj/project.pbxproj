@@ -10,9 +10,22 @@
 		0F6600C42D15FD6200BDC6D2 /* myafrica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myafrica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		0F4DAA562E18678A009E8525 /* Exceptions for "myafrica" folder in "myafrica" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 0F6600C32D15FD6200BDC6D2 /* myafrica */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0F6600C62D15FD6200BDC6D2 /* myafrica */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0F4DAA562E18678A009E8525 /* Exceptions for "myafrica" folder in "myafrica" target */,
+			);
 			path = myafrica;
 			sourceTree = "<group>";
 		};
@@ -78,7 +91,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1630;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					0F6600C32D15FD6200BDC6D2 = {
 						CreatedOnToolsVersion = 16.2;
