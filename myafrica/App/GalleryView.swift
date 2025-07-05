@@ -34,7 +34,9 @@ struct GalleryView: View {
         gridLayout = Array(
             repeating: .init(.flexible()),
             count: Int(gridColumn)
+
         )
+//        print(gridColumn)
     }
 
     // MARK: - BODY
@@ -77,9 +79,14 @@ struct GalleryView: View {
 
                     }  //: LOOP
                 }  //: GRID
-                .animation(.easeInOut(duration: 2), value: gridColumn)
+//                .animation(.easeInOut(duration: 1), value: gridColumn)
+                .onChange(of: gridColumn) {
+                    withAnimation(.easeInOut(duration: 1)) {
+                        gridSwitch()
+                    }
+                }
                 .onAppear(perform: {
-                  gridSwitch()
+                    gridSwitch()
                 })
             }  //: VSTACK
             .padding(.horizontal, 10)

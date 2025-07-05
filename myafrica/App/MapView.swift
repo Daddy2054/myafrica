@@ -19,6 +19,10 @@ struct MapView: View {
             span: MKCoordinateSpan(latitudeDelta: 70.0, longitudeDelta: 70.0)
         )
     )
+
+    @State private var currentCenter = CLLocationCoordinate2D(latitude: 6.600286, longitude: 16.4377599)
+    @State private var currentSpan = MKCoordinateSpan(latitudeDelta: 70.0, longitudeDelta: 70.0)
+
     let locations: [NationalParkLocation] = Bundle.main.decode("locations.json")
     //    private var cameraCenter: CLLocationCoordinate2D {
     //        switch cameraPosition {
@@ -41,7 +45,8 @@ struct MapView: View {
             let center = context.camera.centerCoordinate
             let span = context.region.span
             cameraPosition = .region(MKCoordinateRegion(center: center, span: span))
-  
+            currentCenter = center
+            currentSpan = span
         }
          .overlay(
             HStack(alignment: .center, spacing: 12) {
@@ -57,7 +62,8 @@ struct MapView: View {
                             .fontWeight(.bold)
                             .foregroundColor(.accentColor)
                         Spacer()
-                        Text("\(cameraPosition.region?.center.latitude ?? 0)")
+//                        Text("\(cameraPosition.region?.center.latitude ?? 0)")
+                        Text("\(currentCenter.latitude)")
                             .font(.footnote)
                             .foregroundColor(.white)
                     }
@@ -70,7 +76,8 @@ struct MapView: View {
                             .fontWeight(.bold)
                             .foregroundColor(.accentColor)
                         Spacer()
-                        Text("\(cameraPosition.region?.center.longitude ?? 0)")
+//                        Text("\(cameraPosition.region?.center.longitude ?? 0)")
+                        Text("\(currentCenter.longitude)")
                             .font(.footnote)
                             .foregroundColor(.white)
                     }
